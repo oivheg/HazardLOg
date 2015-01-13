@@ -33,9 +33,6 @@
             this.btnblue = new System.Windows.Forms.Button();
             this.btnmap = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.hazardLogDataSet = new HazLog.HazardLogDataSet();
-            this.hazardLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hazardLogTableAdapter = new HazLog.HazardLogDataSetTableAdapters.HazardLogTableAdapter();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subSystemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +47,12 @@
             this.mitigationAchievedYesNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.additionalLocalMitigationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postMitigationValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hazardLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hazardLogDataSet = new HazLog.HazardLogDataSet();
+            this.hazardLogTableAdapter = new HazLog.HazardLogDataSetTableAdapters.HazardLogTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hazardLogDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hazardLogBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hazardLogDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btntree
@@ -63,7 +63,7 @@
             this.btntree.TabIndex = 0;
             this.btntree.Text = "Tree";
             this.btntree.UseVisualStyleBackColor = true;
-            this.btntree.Click += new System.EventHandler(this.button1_Click);
+            this.btntree.Click += new System.EventHandler(this.btntree_Click);
             // 
             // btnblue
             // 
@@ -113,103 +113,117 @@
             this.dataGridView1.Size = new System.Drawing.Size(992, 397);
             this.dataGridView1.TabIndex = 3;
             // 
-            // hazardLogDataSet
-            // 
-            this.hazardLogDataSet.DataSetName = "HazardLogDataSet";
-            this.hazardLogDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hazardLogBindingSource
-            // 
-            this.hazardLogBindingSource.DataMember = "HazardLog";
-            this.hazardLogBindingSource.DataSource = this.hazardLogDataSet;
-            // 
-            // hazardLogTableAdapter
-            // 
-            this.hazardLogTableAdapter.ClearBeforeFill = true;
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // subSystemsDataGridViewTextBoxColumn
             // 
             this.subSystemsDataGridViewTextBoxColumn.DataPropertyName = "Sub-Systems";
             this.subSystemsDataGridViewTextBoxColumn.HeaderText = "Sub-Systems";
             this.subSystemsDataGridViewTextBoxColumn.Name = "subSystemsDataGridViewTextBoxColumn";
+            this.subSystemsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // hazardsDataGridViewTextBoxColumn
             // 
             this.hazardsDataGridViewTextBoxColumn.DataPropertyName = "Hazards";
             this.hazardsDataGridViewTextBoxColumn.HeaderText = "Hazards";
             this.hazardsDataGridViewTextBoxColumn.Name = "hazardsDataGridViewTextBoxColumn";
+            this.hazardsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pRELikelihoodDataGridViewTextBoxColumn
             // 
             this.pRELikelihoodDataGridViewTextBoxColumn.DataPropertyName = "PRELikelihood";
             this.pRELikelihoodDataGridViewTextBoxColumn.HeaderText = "PRELikelihood";
             this.pRELikelihoodDataGridViewTextBoxColumn.Name = "pRELikelihoodDataGridViewTextBoxColumn";
+            this.pRELikelihoodDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pRESeverityDataGridViewTextBoxColumn
             // 
             this.pRESeverityDataGridViewTextBoxColumn.DataPropertyName = "PRESeverity";
             this.pRESeverityDataGridViewTextBoxColumn.HeaderText = "PRESeverity";
             this.pRESeverityDataGridViewTextBoxColumn.Name = "pRESeverityDataGridViewTextBoxColumn";
+            this.pRESeverityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pREOutcomeDataGridViewTextBoxColumn
             // 
             this.pREOutcomeDataGridViewTextBoxColumn.DataPropertyName = "PREOutcome";
             this.pREOutcomeDataGridViewTextBoxColumn.HeaderText = "PREOutcome";
             this.pREOutcomeDataGridViewTextBoxColumn.Name = "pREOutcomeDataGridViewTextBoxColumn";
+            this.pREOutcomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // mitigationDataGridViewTextBoxColumn
             // 
             this.mitigationDataGridViewTextBoxColumn.DataPropertyName = "Mitigation";
             this.mitigationDataGridViewTextBoxColumn.HeaderText = "Mitigation";
             this.mitigationDataGridViewTextBoxColumn.Name = "mitigationDataGridViewTextBoxColumn";
+            this.mitigationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // postLikelihoodDataGridViewTextBoxColumn
             // 
             this.postLikelihoodDataGridViewTextBoxColumn.DataPropertyName = "PostLikelihood";
             this.postLikelihoodDataGridViewTextBoxColumn.HeaderText = "PostLikelihood";
             this.postLikelihoodDataGridViewTextBoxColumn.Name = "postLikelihoodDataGridViewTextBoxColumn";
+            this.postLikelihoodDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pOSTSeverityDataGridViewTextBoxColumn
             // 
             this.pOSTSeverityDataGridViewTextBoxColumn.DataPropertyName = "POSTSeverity";
             this.pOSTSeverityDataGridViewTextBoxColumn.HeaderText = "POSTSeverity";
             this.pOSTSeverityDataGridViewTextBoxColumn.Name = "pOSTSeverityDataGridViewTextBoxColumn";
+            this.pOSTSeverityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // pOSTOutcomeDataGridViewTextBoxColumn
             // 
             this.pOSTOutcomeDataGridViewTextBoxColumn.DataPropertyName = "POSTOutcome";
             this.pOSTOutcomeDataGridViewTextBoxColumn.HeaderText = "POSTOutcome";
             this.pOSTOutcomeDataGridViewTextBoxColumn.Name = "pOSTOutcomeDataGridViewTextBoxColumn";
+            this.pOSTOutcomeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // mitigationAchievedYesNoDataGridViewTextBoxColumn
             // 
             this.mitigationAchievedYesNoDataGridViewTextBoxColumn.DataPropertyName = "Mitigation achieved ? Yes/No";
             this.mitigationAchievedYesNoDataGridViewTextBoxColumn.HeaderText = "Mitigation achieved ? Yes/No";
             this.mitigationAchievedYesNoDataGridViewTextBoxColumn.Name = "mitigationAchievedYesNoDataGridViewTextBoxColumn";
+            this.mitigationAchievedYesNoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // additionalLocalMitigationDataGridViewTextBoxColumn
             // 
             this.additionalLocalMitigationDataGridViewTextBoxColumn.DataPropertyName = "Additional local mitigation";
             this.additionalLocalMitigationDataGridViewTextBoxColumn.HeaderText = "Additional local mitigation";
             this.additionalLocalMitigationDataGridViewTextBoxColumn.Name = "additionalLocalMitigationDataGridViewTextBoxColumn";
+            this.additionalLocalMitigationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // postMitigationValueDataGridViewTextBoxColumn
             // 
             this.postMitigationValueDataGridViewTextBoxColumn.DataPropertyName = "Post mitigation value";
             this.postMitigationValueDataGridViewTextBoxColumn.HeaderText = "Post mitigation value";
             this.postMitigationValueDataGridViewTextBoxColumn.Name = "postMitigationValueDataGridViewTextBoxColumn";
+            this.postMitigationValueDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hazardLogBindingSource
+            // 
+            this.hazardLogBindingSource.DataMember = "HazardLog";
+            this.hazardLogBindingSource.DataSource = this.hazardLogDataSet;
+            // 
+            // hazardLogDataSet
+            // 
+            this.hazardLogDataSet.DataSetName = "HazardLogDataSet";
+            this.hazardLogDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hazardLogTableAdapter
+            // 
+            this.hazardLogTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -224,8 +238,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hazardLogDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hazardLogBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hazardLogDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
