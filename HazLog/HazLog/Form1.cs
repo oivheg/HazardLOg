@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HazLog.blueprint;
 namespace HazLog
 {
     public partial class Form1 : Form
     {
+        private BluePrint _bluePrint;
+
+      
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +23,12 @@ namespace HazLog
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnblue_Click(object sender, EventArgs e)
+        {
+            _bluePrint = new BluePrint();
+            _bluePrint.Show();
         }
     }
 }

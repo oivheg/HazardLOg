@@ -51,6 +51,7 @@
             this.btnblue.TabIndex = 1;
             this.btnblue.Text = "BluePrint";
             this.btnblue.UseVisualStyleBackColor = true;
+            this.btnblue.Click += new System.EventHandler(this.btnblue_Click);
             // 
             // btnmap
             // 

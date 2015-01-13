@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="blueprint\BluePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blueprint\BluePrint.Designer.cs">
+      <DependentUpon>BluePrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\Data.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -53,6 +59,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="blueprint\BluePrint.resx">
+      <DependentUpon>BluePrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,10 +88,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="blueprint\" />
     <Folder Include="mindMap\" />
     <Folder Include="Standard\" />
     <Folder Include="treeView\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="blueprint\boeing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
