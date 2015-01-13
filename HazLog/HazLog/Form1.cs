@@ -30,5 +30,12 @@ namespace HazLog
             _bluePrint = new BluePrint();
             _bluePrint.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'hazardLogDataSet.HazardLog' table. You can move, or remove it, as needed.
+            this.hazardLogTableAdapter.Fill(this.hazardLogDataSet.HazardLog);
+
+        }
     }
 }
